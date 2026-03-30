@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Евгений Валентюк – Senior System Analyst / Solution Architect</title>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #0f1117;
+  color: #d4d8e8;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 48px 24px 64px;
+}
+
+/* Header */
+.header {
+  padding-bottom: 32px;
+  border-bottom: 2px solid #4a7cff;
+  margin-bottom: 40px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #4a7cff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: opacity .2s;
+}
+.back-link:hover { opacity: .7; }
+
+.header__name {
+  font-size: 32px;
+  font-weight: 700;
+  color: #eef0f6;
+  margin-bottom: 4px;
+}
+
+.header__role {
+  font-size: 18px;
+  color: #4a7cff;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.header__tagline {
+  font-size: 14px;
+  color: #8a8fa8;
+  margin-bottom: 16px;
+}
+
+.header__education {
+  font-size: 14px;
+  color: #d4d8e8;
+  margin-bottom: 12px;
+}
+
+.header__contacts {
+  font-size: 14px;
+  color: #8a8fa8;
+}
+
+.header__contacts a {
+  color: #4a7cff;
+  text-decoration: none;
+}
+
+.header__contacts a:hover {
+  text-decoration: underline;
+}
+
+/* Section titles */
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #eef0f6;
+  margin-bottom: 20px;
+}
+
+/* AI Callout */
+.ai-callout {
+  background: #1e2130;
+  border-left: 3px solid #4a7cff;
+  border-radius: 8px;
+  padding: 24px 28px;
+  margin-bottom: 40px;
+}
+
+.ai-callout__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #eef0f6;
+  margin-bottom: 14px;
+}
+
+.ai-callout ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ai-callout li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.ai-callout li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #4a7cff;
+}
+
+/* Experience */
+.experience {
+  margin-bottom: 40px;
+}
+
+.exp-card {
+  background: #1a1d27;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  padding: 24px 28px;
+  margin-bottom: 16px;
+  transition: background 0.2s;
+}
+
+.exp-card:hover {
+  background: #1f2233;
+}
+
+.exp-card__header {
+  font-size: 15px;
+  color: #8a8fa8;
+  margin-bottom: 4px;
+}
+
+.exp-card__header .accent {
+  color: #4a7cff;
+  font-weight: 600;
+}
+
+.exp-card__desc {
+  font-size: 14px;
+  font-style: italic;
+  color: #8a8fa8;
+  margin-bottom: 14px;
+}
+
+.exp-card__achievements {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.exp-card__achievements li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.exp-card__achievements li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #4a7cff;
+}
+
+.highlight {
+  color: #4a7cff;
+  font-weight: 700;
+}
+
+.exp-card__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Pill tags */
+.pill {
+  background: rgba(74,124,255,.12);
+  color: #4a7cff;
+  border-radius: 12px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-family: 'Cascadia Code', monospace;
+  white-space: nowrap;
+}
+
+/* Skills */
+.skills {
+  margin-bottom: 40px;
+}
+
+.skills__category {
+  margin-bottom: 18px;
+}
+
+.skills__label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #eef0f6;
+  margin-bottom: 8px;
+}
+
+.skills__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid #252835;
+  padding-top: 28px;
+  font-size: 14px;
+  color: #8a8fa8;
+  line-height: 1.8;
+}
+
+.footer a {
+  color: #4a7cff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Dividers */
+.divider {
+  border: none;
+  border-top: 1px solid #252835;
+  margin: 40px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 28px 16px 40px;
+  }
+
+  .header__name {
+    font-size: 26px;
+  }
+
+  .header__role {
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 19px;
+  }
+
+  .ai-callout {
+    padding: 18px 18px;
+  }
+
+  .exp-card {
+    padding: 18px 18px;
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="back-link">&larr; Intro</a>
+    <div class="header__name">Евгений Валентюк</div>
+    <div class="header__role">Senior System Analyst / Solution Architect</div>
+    <div class="header__tagline">Full-stack аналитик с архитектурным уклоном</div>
+    <div class="header__education">Образование: МИФИ, факультет А, кафедра &laquo;Электропривода и автоматизации&raquo;</div>
+    <div class="header__contacts">
+      Telegram <a href="https://t.me/EugeneValentyuk">@EugeneValentyuk</a>
+      &nbsp;|&nbsp; <a href="tel:+79025014047">+7 902 501-40-47</a>
+      &nbsp;|&nbsp; <a href="mailto:e.valentyuk@yandex.ru">e.valentyuk@yandex.ru</a>
+    </div>
+  </header>
+
+  <!-- Experience -->
+  <section class="experience">
+    <div class="section-title">Опыт</div>
+
+    <!-- Card 1 -->
+    <div class="exp-card">
+      <div class="exp-card__header">Декабрь 2025 &ndash; Март 2026 &nbsp;|&nbsp; ООО &laquo;Гросссофт&raquo; &nbsp;|&nbsp; <span class="accent">Бизнес-системный аналитик</span></div>
+      <div class="exp-card__desc">Проект в сфере медицины &ndash; разработка ПО для лучевой терапии.</div>
+      <ul class="exp-card__achievements">
+        <li>Доработаны <span class="highlight">3</span> программных инструмента диагностики и лечения.</li>
+        <li>Разработаны блок реконструкции датчиков и блок операций над планами лечения.</li>
+        <li>Проведён реверс-инжиниринг для <span class="highlight">30%</span> ранее разработанной функциональности.</li>
+      </ul>
+      <div class="exp-card__stack">
+        <span class="pill">PostgreSQL</span>
+        <span class="pill">Jira</span>
+        <span class="pill">Confluence</span>
+        <span class="pill">GitLab</span>
+        <span class="pill">Swagger UI</span>
+        <span class="pill">PlantUML</span>
+        <span class="pill">DBeaver</span>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="exp-card">
+      <div class="exp-card__header">Сентябрь 2024 &ndash; Декабрь 2025 &nbsp;|&nbsp; ИТ ДЗО федерального банка (под NDA) &nbsp;|&nbsp; <span class="accent">Старший СА, БА, продуктовый аналитик</span></div>
+      <div class="exp-card__desc">Развитие платформенных микросервисов и создание реферальной платформы.</div>
+      <ul class="exp-card__achievements">
+        <li>Снизил ошибки интеграций на <span class="highlight">35%</span> (стандартизация REST API и Kafka-контрактов).</li>
+        <li>Снизил дефекты на тестировании на <span class="highlight">40%</span> (edge-case сценарии).</li>
+        <li>Ускорил запуск реферальной платформы на <span class="highlight">30%</span>.</li>
+        <li>Сократил время постановки задач на <span class="highlight">30%</span> (шаблоны SRS, API-контракты).</li>
+      </ul>
+      <div class="exp-card__stack">
+        <span class="pill">PostgreSQL</span>
+        <span class="pill">Oracle</span>
+        <span class="pill">REST API</span>
+        <span class="pill">Kafka</span>
+        <span class="pill">Vue.js</span>
+        <span class="pill">Jira</span>
+        <span class="pill">Confluence</span>
+        <span class="pill">GitLab</span>
+        <span class="pill">SwaggerUI</span>
+        <span class="pill">Draw.io</span>
+        <span class="pill">PlantUML</span>
+        <span class="pill">Mermaid</span>
+        <span class="pill">Figma</span>
+        <span class="pill">Miro</span>
+        <span class="pill">DBeaver</span>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="exp-card">
+      <div class="exp-card__header">Ноябрь 2021 &ndash; Сентябрь 2024 &nbsp;|&nbsp; Ретейлингово-сервисная компания (NDA) &nbsp;|&nbsp; <span class="accent">Старший системный аналитик</span></div>
+      <div class="exp-card__desc">Сопровождение ИС и миграция на микросервисную архитектуру. Руководство командой 6 аналитиков (2 БА + 4 СА).</div>
+      <ul class="exp-card__achievements">
+        <li>Снизил возвраты требований на <span class="highlight">30%</span> (ревью, стандарты документации).</li>
+        <li>Миграция монолита Oracle &rarr; PostgreSQL микросервисы (ERD, API-контракты).</li>
+        <li>Снизил интеграционные ошибки на <span class="highlight">25&ndash;30%</span> (стандартизация JSON/YAML-контрактов).</li>
+        <li>Ускорил согласование UX/UI на <span class="highlight">40%</span> (прототипы в Figma).</li>
+      </ul>
+      <div class="exp-card__stack">
+        <span class="pill">PostgreSQL</span>
+        <span class="pill">Oracle</span>
+        <span class="pill">REST API</span>
+        <span class="pill">Kafka</span>
+        <span class="pill">Vue.js</span>
+        <span class="pill">Jira</span>
+        <span class="pill">Confluence</span>
+        <span class="pill">GitLab</span>
+        <span class="pill">SwaggerUI</span>
+        <span class="pill">Draw.io</span>
+        <span class="pill">PlantUML</span>
+        <span class="pill">Mermaid</span>
+        <span class="pill">Figma</span>
+        <span class="pill">Miro</span>
+        <span class="pill">DBeaver</span>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="exp-card">
+      <div class="exp-card__header">Январь 2019 &ndash; Октябрь 2021 &nbsp;|&nbsp; ООО ГК &laquo;Billing Online&raquo; &nbsp;|&nbsp; <span class="accent">Системный аналитик</span></div>
+      <div class="exp-card__desc">Разработка и внедрение расчётно-информационных систем для ЖКХ и энергетики. Роли: PO, PM, СА, БА, технический писатель.</div>
+      <ul class="exp-card__achievements">
+        <li>Миграция <span class="highlight">400 тыс.</span> лицевых счетов &ndash; Крымский Республиканский Расчётный центр.</li>
+        <li>Миграция <span class="highlight">300 тыс.</span> лицевых счетов УК ЖКХ Минобороны РФ из 1С.</li>
+        <li>Интеграция с ГИС ЖКХ, госуслугами, АБС.</li>
+      </ul>
+      <div class="exp-card__stack">
+        <span class="pill">Astra Linux</span>
+        <span class="pill">MySQL</span>
+        <span class="pill">PostgreSQL</span>
+        <span class="pill">PHP</span>
+        <span class="pill">Python</span>
+        <span class="pill">Yii</span>
+        <span class="pill">Redmine</span>
+        <span class="pill">GitLab</span>
+        <span class="pill">PGAdmin</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Skills -->
+  <section class="skills">
+    <div class="section-title">Навыки</div>
+
+    <div class="skills__category">
+      <div class="skills__label">Архитектура и анализ</div>
+      <div class="skills__pills">
+        <span class="pill">BPMN 2.0</span>
+        <span class="pill">UML</span>
+        <span class="pill">C4</span>
+        <span class="pill">Sequence</span>
+        <span class="pill">Component</span>
+        <span class="pill">Activity</span>
+        <span class="pill">ERD</span>
+        <span class="pill">CJM</span>
+        <span class="pill">Data Flow</span>
+        <span class="pill">User Story</span>
+        <span class="pill">Use Case</span>
+        <span class="pill">SRS</span>
+        <span class="pill">ЧТЗ</span>
+      </div>
+    </div>
+
+    <div class="skills__category">
+      <div class="skills__label">Интеграции и API</div>
+      <div class="skills__pills">
+        <span class="pill">REST API</span>
+        <span class="pill">Kafka</span>
+        <span class="pill">SOAP</span>
+        <span class="pill">OpenAPI/Swagger</span>
+        <span class="pill">Postman</span>
+        <span class="pill">JSON</span>
+        <span class="pill">YAML</span>
+        <span class="pill">OAuth</span>
+        <span class="pill">Webhook</span>
+      </div>
+    </div>
+
+    <div class="skills__category">
+      <div class="skills__label">Базы данных</div>
+      <div class="skills__pills">
+        <span class="pill">PostgreSQL</span>
+        <span class="pill">Oracle</span>
+        <span class="pill">MS SQL Server</span>
+        <span class="pill">PostgresPro</span>
+        <span class="pill">MySQL</span>
+        <span class="pill">DBeaver</span>
+        <span class="pill">PGAdmin</span>
+        <span class="pill">SQL</span>
+        <span class="pill">JOIN</span>
+        <span class="pill">CTE</span>
+        <span class="pill">оконные функции</span>
+        <span class="pill">ER-моделирование</span>
+        <span class="pill">миграция данных</span>
+      </div>
+    </div>
+
+    <div class="skills__category">
+      <div class="skills__label">AI</div>
+      <div class="skills__pills">
+        <span class="pill">Claude Code</span>
+        <span class="pill">Claude API</span>
+        <span class="pill">RAG</span>
+        <span class="pill">Llama</span>
+        <span class="pill">Prompt Engineering</span>
+        <span class="pill">AI-assisted аналитика</span>
+      </div>
+    </div>
+
+    <div class="skills__category">
+      <div class="skills__label">Инструменты</div>
+      <div class="skills__pills">
+        <span class="pill">Jira</span>
+        <span class="pill">Confluence</span>
+        <span class="pill">GitLab</span>
+        <span class="pill">Git</span>
+        <span class="pill">Draw.io</span>
+        <span class="pill">Miro</span>
+        <span class="pill">PlantUML</span>
+        <span class="pill">Mermaid</span>
+        <span class="pill">Figma</span>
+        <span class="pill">VS Code</span>
+        <span class="pill">Docs as Code</span>
+        <span class="pill">Markdown</span>
+      </div>
+    </div>
+
+    <div class="skills__category">
+      <div class="skills__label">Методологии</div>
+      <div class="skills__pills">
+        <span class="pill">Scrum</span>
+        <span class="pill">Kanban</span>
+        <span class="pill">Scrumban</span>
+        <span class="pill">Waterfall</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- AI Callout -->
+  <section class="ai-callout">
+    <div class="ai-callout__title">Если проекту нужен AI – умею и практикую</div>
+    <ul>
+      <li>Prompt engineering &ndash; формулировка задач для LLM, получение точных результатов. Сертификат Zero Code.</li>
+      <li>AI-assisted анализ: формализация требований, BRD, FR, NFR, User Stories, ТЗ, ЧТЗ &ndash; через диалог с LLM.</li>
+      <li>AI-assisted проектирование: архитектура, модели данных, API-контракты, диаграммы (BPMN, UML, ERD, C4).</li>
+      <li>AI-assisted разработка: генерация кода, SQL, тест-кейсов, документации.</li>
+      <li>Оркестрация AI-агентов для параллельного выполнения задач.</li>
+      <li>Коммерческий опыт: применение LLM (RAG + Llama) для системной аналитики в финтехе.</li>
+      <li>Инструменты: Claude Code, Claude API, внутренние корпоративные LLM.</li>
+    </ul>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Формат: удалёнка, полная занятость или проектная работа. Екатеринбург, РФ.</p>
+    <p>Английский B1+ (техническая документация без словаря, разговорный до B2&ndash;C1).</p>
+    <p>Соблюдение: 152-ФЗ, 115-ФЗ.</p>
+    <p>Сертификация: Zero Code &ndash; промпт-инжиниринг.</p>
+    <p style="margin-top: 16px;">
+      Telegram <a href="https://t.me/EugeneValentyuk">@EugeneValentyuk</a>
+      &nbsp;|&nbsp; <a href="tel:+79025014047">+7 902 501-40-47</a>
+      &nbsp;|&nbsp; <a href="mailto:e.valentyuk@yandex.ru">e.valentyuk@yandex.ru</a>
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
