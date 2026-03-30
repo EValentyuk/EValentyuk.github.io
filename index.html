@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Евгений Валентюк – Senior System Analyst / Solution Architect</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #0f1117;
+            color: #d4d8e8;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        h1, h2, h3 {
+            color: #eef0f6;
+        }
+
+        /* --- Header --- */
+        .header {
+            border-bottom: 2px solid #4a7cff;
+            padding-bottom: 28px;
+            margin-bottom: 40px;
+        }
+
+        .header__name {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .header__position {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #eef0f6;
+            margin-bottom: 2px;
+        }
+
+        .header__tagline {
+            font-size: 0.85rem;
+            color: #8890a4;
+            margin-bottom: 16px;
+        }
+
+        .header__contacts {
+            font-size: 0.88rem;
+            color: #9ba3b8;
+        }
+
+        .header__contacts span + span::before {
+            content: '|';
+            margin: 0 10px;
+            color: #3a3f52;
+        }
+
+        /* --- Section --- */
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section__title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #eef0f6;
+        }
+
+        /* --- Cards grid (3 columns) --- */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+        }
+
+        .card {
+            background: #1a1d27;
+            border-radius: 8px;
+            padding: 24px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            border: 1px solid #252835;
+            transition: background 0.2s ease;
+        }
+
+        .card:hover {
+            background: #1f2230;
+        }
+
+        .card__title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #eef0f6;
+            margin-bottom: 12px;
+        }
+
+        .card__list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card__list li {
+            font-size: 0.88rem;
+            color: #b0b6c8;
+            margin-bottom: 8px;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .card__list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #4a7cff;
+        }
+
+        .card__list li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* --- Advantages --- */
+        .advantages__item {
+            background: #1a1d27;
+            border-left: 3px solid #4a7cff;
+            border-radius: 0 8px 8px 0;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            transition: background 0.2s ease;
+        }
+
+        .advantages__item:hover {
+            background: #1f2230;
+        }
+
+        .advantages__item:last-child {
+            margin-bottom: 0;
+        }
+
+        .advantages__item strong {
+            color: #eef0f6;
+        }
+
+        .advantages__item p {
+            font-size: 0.92rem;
+            margin: 0;
+        }
+
+        /* --- Metrics grid (3x2) --- */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .metric {
+            background: #1a1d27;
+            border-radius: 8px;
+            padding: 20px 16px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            border: 1px solid #252835;
+            transition: background 0.2s ease;
+        }
+
+        .metric:hover {
+            background: #1f2230;
+        }
+
+        .metric__value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #4a7cff;
+            line-height: 1.2;
+        }
+
+        .metric__label {
+            font-size: 0.82rem;
+            color: #8890a4;
+            margin-top: 6px;
+        }
+
+        /* --- Stack --- */
+        .stack-group {
+            margin-bottom: 14px;
+        }
+
+        .stack-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .stack-group__label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #eef0f6;
+            margin-bottom: 8px;
+        }
+
+        .stack-group__tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            background: #252835;
+            color: #b0b6c8;
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 14px;
+            border: 1px solid #323648;
+            font-family: 'Cascadia Code', monospace;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            border-top: 1px solid #252835;
+            padding-top: 24px;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6b7189;
+        }
+
+        .footer p {
+            margin-bottom: 6px;
+        }
+
+        .footer p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* --- Divider --- */
+        .divider {
+            border: none;
+            border-top: 1px solid #252835;
+            margin: 0 0 40px 0;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .header__name {
+                font-size: 1.6rem;
+            }
+
+            .header__contacts {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .header__contacts span + span::before {
+                content: none;
+            }
+
+            .container {
+                padding: 24px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="header__name">Евгений Валентюк</div>
+            <div class="header__position">Senior System Analyst / Solution Architect</div>
+            <div class="header__tagline">Full-stack аналитик с архитектурным уклоном</div>
+            <div class="header__contacts">
+                <span>Telegram @EugeneValentyuk</span>
+                <span>+7 902 501-40-47</span>
+                <span>e.valentyuk@yandex.ru</span>
+            </div>
+        </header>
+
+        <!-- Что я делаю -->
+        <section class="section">
+            <h2 class="section__title">Что я делаю</h2>
+            <div class="cards-grid">
+
+                <div class="card">
+                    <h3 class="card__title">Архитектура решений</h3>
+                    <ul class="card__list">
+                        <li>Проектирование микросервисной архитектуры: границы сервисов, API-контракты, межсервисные взаимодействия (REST, Kafka).</li>
+                        <li>Рефакторинг архитектурного ландшафта: оптимизация интеграций, переиспользование компонентов.</li>
+                        <li>Миграция монолитов в микросервисы: Oracle &rarr; PostgreSQL, strangler fig pattern.</li>
+                        <li>C4-диаграммы, sequence, component.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3 class="card__title">Системная аналитика</h3>
+                    <ul class="card__list">
+                        <li>Сбор и формализация требований: интервью, воркшопы, AS IS / TO BE.</li>
+                        <li>User Stories (INVEST), Use Cases, SRS, ЧТЗ, acceptance criteria.</li>
+                        <li>Постановки на фронтенд, бэкенд, QA – в формате, готовом для разработки.</li>
+                        <li>BPMN 2.0, UML, ERD – моделирование процессов и данных.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3 class="card__title">Интеграции</h3>
+                    <ul class="card__list">
+                        <li>REST API: проектирование эндпоинтов, OpenAPI/Swagger, версионирование контрактов.</li>
+                        <li>Kafka: топики, схемы событий, гарантии доставки, DLQ.</li>
+                        <li>Опыт: ГИС ЖКХ, АБС, госуслуги, логистическое ПО, биллинговые системы.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Чем отличаюсь -->
+        <section class="section">
+            <h2 class="section__title">Чем отличаюсь</h2>
+
+            <div class="advantages__item">
+                <p><strong>Архитектурное мышление.</strong> Не просто собираю требования – проектирую решения: выбираю протоколы, рисую схемы взаимодействия, определяю границы сервисов. Работаю в связке с архитектором или самостоятельно.</p>
+            </div>
+
+            <div class="advantages__item">
+                <p><strong>Стандартизация и процессы.</strong> Создаю шаблоны документации, внедряю ревью требований, выстраиваю процесс БА &rarr; СА &rarr; Архитектор. Снижение возвратов на 30%, ошибок интеграций на 35%.</p>
+            </div>
+
+            <div class="advantages__item">
+                <p><strong>Быстрое погружение в домен.</strong> 4 домена за 7 лет – каждый раз за 1–2 месяца выходил на уверенный уровень.</p>
+            </div>
+
+            <div class="advantages__item">
+                <p><strong>Полный цикл.</strong> От Discovery до Delivery, тестирования и сдачи заказчику. Разговариваю и с бизнесом, и с разработчиками.</p>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Цифры -->
+        <section class="section">
+            <h2 class="section__title">Цифры</h2>
+            <div class="metrics-grid">
+                <div class="metric">
+                    <div class="metric__value">35%</div>
+                    <div class="metric__label">снижение ошибок интеграций</div>
+                </div>
+                <div class="metric">
+                    <div class="metric__value">40%</div>
+                    <div class="metric__label">снижение дефектов на тестировании</div>
+                </div>
+                <div class="metric">
+                    <div class="metric__value">30%</div>
+                    <div class="metric__label">ускорение запуска платформы</div>
+                </div>
+                <div class="metric">
+                    <div class="metric__value">30%</div>
+                    <div class="metric__label">снижение возвратов требований</div>
+                </div>
+                <div class="metric">
+                    <div class="metric__value">6</div>
+                    <div class="metric__label">аналитиков в команде (2 БА + 4 СА)</div>
+                </div>
+                <div class="metric">
+                    <div class="metric__value">400 тыс.</div>
+                    <div class="metric__label">лицевых счетов мигрировано</div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Стек -->
+        <section class="section">
+            <h2 class="section__title">Стек</h2>
+
+            <div class="stack-group">
+                <div class="stack-group__label">Анализ</div>
+                <div class="stack-group__tags">
+                    <span class="tag">BPMN 2.0</span>
+                    <span class="tag">UML (C4, Sequence, Component)</span>
+                    <span class="tag">ERD</span>
+                    <span class="tag">CJM</span>
+                    <span class="tag">User Story</span>
+                    <span class="tag">Use Case</span>
+                    <span class="tag">SRS</span>
+                </div>
+            </div>
+
+            <div class="stack-group">
+                <div class="stack-group__label">Интеграции</div>
+                <div class="stack-group__tags">
+                    <span class="tag">REST API</span>
+                    <span class="tag">Kafka</span>
+                    <span class="tag">SOAP</span>
+                    <span class="tag">OpenAPI/Swagger</span>
+                    <span class="tag">Postman</span>
+                    <span class="tag">JSON</span>
+                    <span class="tag">YAML</span>
+                </div>
+            </div>
+
+            <div class="stack-group">
+                <div class="stack-group__label">БД</div>
+                <div class="stack-group__tags">
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">Oracle</span>
+                    <span class="tag">MS SQL Server</span>
+                    <span class="tag">DBeaver</span>
+                    <span class="tag">SQL (JOIN, CTE, оконные)</span>
+                </div>
+            </div>
+
+            <div class="stack-group">
+                <div class="stack-group__label">Инструменты</div>
+                <div class="stack-group__tags">
+                    <span class="tag">Jira</span>
+                    <span class="tag">Confluence</span>
+                    <span class="tag">GitLab</span>
+                    <span class="tag">PlantUML</span>
+                    <span class="tag">Mermaid</span>
+                    <span class="tag">Draw.io</span>
+                    <span class="tag">Figma</span>
+                    <span class="tag">VS Code</span>
+                </div>
+            </div>
+
+            <div class="stack-group">
+                <div class="stack-group__label">Методологии</div>
+                <div class="stack-group__tags">
+                    <span class="tag">Scrum</span>
+                    <span class="tag">Kanban</span>
+                    <span class="tag">Scrumban</span>
+                    <span class="tag">Waterfall</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Формат работы: удалёнка, Екатеринбург. Английский B1+.</p>
+            <p>Telegram @EugeneValentyuk | +7 902 501-40-47 | e.valentyuk@yandex.ru</p>
+        </footer>
+
+    </div>
+</body>
+</html>
